@@ -16,22 +16,24 @@ module.exports = () => {
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
+    
+
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: "./index.html",
-        title: "JATE",
+        title: "Text Editor",
       }),
       new InjectManifest({
-        swSrc: "./src-se.js",
+        swSrc: "./src-sw.js",
         swDest: "src-sw.js",
       }),
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: "Just Another Text Editor",
-        short_name: "JATE",
-        description: "Text editor with offline capabilities using IndexedDB",
+        name: "My Text Editor",
+        short_name: "textEditor",
+        description: "Your text goes here",
         background_color: "#255ca3",
         theme_color: "#255ca3",
         start_url: "/",
